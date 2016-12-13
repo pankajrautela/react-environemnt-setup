@@ -1,0 +1,140 @@
+.strikethrough{
+    text-decoration : line-through;
+    color:darkslategray;
+}
+.developer-addItem {
+	margin-top: 1rem;
+	padding-top: 1rem;
+}
+
+
+.copyright {
+    color: #fff;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px;
+    text-align:right;
+}
+.footer-bottom {
+    background-color: #15224f;
+    min-height: 50px;
+    width: 100%;
+    margin-bottom: 1px
+}
+
+html {
+	color: darkslategray;
+	background-color: #fffefd;
+}
+
+body {
+	padding-top: 3rem;
+}
+
+.status-false {
+    height: 40px;
+    background-color: red;
+}
+
+.status-true {
+	  height: 40px;
+    background-color: green;
+}
+
+.strikethrough {
+	text-decoration: line-through;
+	color: slategray;
+}
+
+h1 {
+	text-decoration: underline;
+	text-decoration-style: wavy;
+}
+
+.document-addItem {
+	margin-top: 1rem;
+	padding-top: 1rem;
+}
+
+.container
+{
+    background-color: white;
+}
+.form
+{
+    margin: 5px 15px 5px 15px;
+}
+.form-group
+{
+    margin-top:10px;
+    margin-left: 10px;
+    margin-right: 5px; 
+    
+}
+.logoheader{
+    width: 100%;
+    background-color: #15224f;
+    height: auto;
+
+}
+.form-group input{
+    height:30px;
+}
+.form-group  button{
+    height:30px;
+}
+
+.mercerinsights a{
+    color:white !important;
+
+}
+.MercerPicture{
+    float:left;
+}
+.footer-bottom {
+    background-color: #15224f;
+    min-height: 50px;
+    width: 100%;
+}
+
+.layer{
+    margin:0 40px 0 40px;
+}
+.signInHeader{
+    color:white;
+    font-size:17px;
+    background-color: #006dcc;
+    margin-right: 0px;
+    margin-top: 20px;
+    text-align: center;
+    }
+
+.signInBox{
+    margin-top: -5px;
+    margin-right: 0px;
+}
+html {
+	color: darkslategray;
+	background-color: #fffefd;
+}
+
+body {
+	padding-top: 3rem;
+}
+
+.inactive {
+	  height: 40px;
+    background-color: red;
+}
+
+.active {
+    height: 40px;
+    background-color: green;
+}
+
+h1 {
+	text-decoration: underline;
+	text-decoration-style: wavy;
+}
+
+

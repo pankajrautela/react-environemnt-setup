@@ -1,0 +1,45 @@
+﻿    .gridColumnSmall {
+        width: 70px;
+    }
+
+    .gridColumnMedium {
+        width: 100px;
+    }
+
+    .gridColumnLargeC {
+        width: 150px;
+        height:21px;
+    }
+
+    .gridTextBox {
+        border: none;
+        height:21px;
+    }
+
+    .imageButton {
+        border: none;
+        background: none;
+        height: 20px;
+    }
+
+    .imageAddRowButton {
+        border: none;
+        background: none;
+        height: 25px;
+    }
+
+    .error {
+        border: none;
+        background-color: #f2dede;
+    }
+
+
+
+    .gridColumnLargeU {
+        width: 140px;
+    }
+
+.gridTextBoxDisabled {
+    background-color:  	#D3D3D3;
+    text-align:right;
+}

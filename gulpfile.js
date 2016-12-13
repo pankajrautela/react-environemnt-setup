@@ -33,10 +33,11 @@ gulp.task('move2temp',function(){
         gulp.src('app/*.ejs')
         .pipe(gulp.dest('./temp'));
         gulp.src(['app/css/*.css'])
-        .pipe(concat('app.css'))
-        .pipe(gulp.dest('./temp/css'));
+        .pipe(gulp.dest('./temp'));
+        gulp.src(['bower_components/skeleton/css/*.css'])
+        .pipe(gulp.dest('./temp'));
         gulp.src(['app/images/*'])
-        .pipe(gulp.dest('./temp/images'));
+        .pipe(gulp.dest('./temp'));
 });
 
 gulp.task('bundle-n-reload',['bundle'],browserSync.reload)
