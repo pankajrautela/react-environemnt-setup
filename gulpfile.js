@@ -34,6 +34,8 @@ gulp.task('move2temp',function(){
         .pipe(gulp.dest('./temp'));
         gulp.src(['app/css/*.css'])
         .pipe(gulp.dest('./temp'));
+         gulp.src(['app/images/*.*'])
+        .pipe(gulp.dest('./temp'));
         gulp.src(['bower_components/skeleton/css/*.css'])
         .pipe(gulp.dest('./temp'));
         gulp.src(['app/images/*'])

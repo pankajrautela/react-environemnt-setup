@@ -23,7 +23,7 @@ var logo = React.createClass({
 var PagePic = React.createClass({
   render: function() {
     return (
-      <img src={'https://graph.facebook.com/' + this.props.pagename + '/picture?type=large'}  height="100" width="100"/>
+      <img src={'picture.jpg'}  height="100" width="100"/>
     );
   }
 });

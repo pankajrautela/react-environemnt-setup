@@ -27,38 +27,38 @@ module.exports = React.createClass({
     info: function(){
         alert("WIP Bro!!, tool is not ready yet.");
     },
+    getInitialState: function() {
+        return { showResults: false };
+    },
+ShowPanel:function(e){
+   this.setState({ showResults:!this.state.showResults });
+},
      render:function(){
        return(
         <div>
             <div className="logoheader">
                 <LogoHeader pagename = 'mercerinsights' pagetitle='Mercer OS - React Module'/>
             </div> 
+            <input type="button" className="panelButton" value="Show/Hide" onClick={this.ShowPanel} />
+                     <div className="content">        
+                <div className="home-box">
+                <Link  to="/login">React Projects</Link>
+                </div>
+                <div className="home-box">
+                <Link to="/">Survey Tool</Link>
+                </div>
+                <div className="home-box">
+                <Link to="/">Analytics</Link>
+                </div>
+            </div> 
+             { this.state.showResults ? 
             <div className = "layer">
-                <div className = "col-sm-6">
+                <div id="content-slide" className = "slide">
                 Mean Technologies - 
                 <DropDown items={ libraries } />
                 </div>
-            </div>        
-            <div>
-                <ul className="nav navbar-nav navbar-left">
-                        <li className="nav-item">
-                            <b><Link  className="nav-link" to="/login">React Projects</Link></b>
-                        </li>
-                        <li className="nav-item">
-                            <b>||</b>
-                        </li>
-                    
-                        <li className="nav-item" onClick = {this.info}>
-                            <b><Link className="nav-link" to="/">Survey Tool</Link></b>
-                        </li>
-                        <li className="nav-item">
-                            <b>||</b>
-                        </li>
-                        <li className="nav-item" onClick = {this.info}>
-                            <b><Link className="nav-link" to="/">Analytics</Link></b>
-                        </li>           
-                </ul>
-            </div>   
+            </div>
+     : null }
             <div className="navbar-fixed-bottom footer-bottom">           
                 <LogoFooter />
             </div>

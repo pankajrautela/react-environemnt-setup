@@ -26,11 +26,13 @@ html {
 	color: darkslategray;
 	background-color: #fffefd;
 }
-
-body {
-	padding-top: 3rem;
+li{
+    list-style-type: decimal-leading-zero;
 }
-
+a:hover{
+    text-decoration:none;
+    font-weight:bold;
+}
 .status-false {
     height: 40px;
     background-color: red;
@@ -40,12 +42,31 @@ body {
 	  height: 40px;
     background-color: green;
 }
-
+.home-box {margin:1%; float:left; width:28%;height:180px; border: solid 1px #555; background-color: #eed; box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8); -moz-box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8); -webkit-box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8); -o-box-shadow: 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 8px -4px rgba(31, 73, 125, 0.8); 
+padding-top:75px;
+} 
 .strikethrough {
 	text-decoration: line-through;
 	color: slategray;
 }
-
+.panelButton{
+    margin:10px;}
+.slide{
+    position: absolute;
+left: 0px;
+top: 155px;
+    width:250px;
+    background-color:#555;
+    color:white;
+    }
+.content{
+    width: 95%;
+height: 100%;
+float: left;
+text-align: center;
+vertical-align: middle;
+margin: 1% 0 1% 5%;
+}
 h1 {
 	text-decoration: underline;
 	text-decoration-style: wavy;
@@ -119,7 +140,7 @@ html {
 }
 
 body {
-	padding-top: 3rem;
+	
 }
 
 .inactive {
