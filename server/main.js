@@ -2,6 +2,7 @@
 var express = require('express');
 var app = new express();
 var parser = require('body-parser');
+require ('./database.js');
 
 //render home page
 app.get('/', function(req,res){

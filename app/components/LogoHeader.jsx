@@ -6,6 +6,7 @@ var React = require('react');
   //       {this.props.pagetitle}
   //       </a>
   //       </span>
+//<--<PagePic pagename={this.props.pagename} /></div> -->
 /*<div className ="mercerinsights">
                 <PageLink pagename={this.props.pagename} pagetitle={this.props.pagetitle} activeuser={this.props.activeUser} username={this.props.userName}/>
             </div>
@@ -14,16 +15,17 @@ var logo = React.createClass({
   render: function() {
       return (
       <div className="layer">
-        <div><PagePic pagename={this.props.pagename} /></div>
-            
-      </div>
-    );
+        <div>
+            Logo               
+        </div>
+    </div>
+    )
   }
 });
 var PagePic = React.createClass({
   render: function() {
     return (
-      <img src={'picture.jpg'}  height="100" width="100"/>
+      <img src={'picture.jpg'} height="100" width="100"/>
     );
   }
 });

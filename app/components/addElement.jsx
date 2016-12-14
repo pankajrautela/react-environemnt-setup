@@ -1,10 +1,10 @@
 var React = require('react');
 var Action = require('./../actions/actioncreator.jsx');
 
-var AddElement = React.createClass({
+module.exports = React.createClass({
     
     getInitialState:function(){
-            return {input:""};
+            return {input:''};
         },
     
     handleInputName:function(e){   
@@ -18,21 +18,22 @@ var AddElement = React.createClass({
              name:this.state.input
          });
          this.setState({
-             input:" "
+             input:''
          })
          },
      
     render:function()
         {
             return(
-            <div className = 'developer-addItem'>
+            <div className = "developer-addItem">
                 <form onSubmit={this.addItem}>
-                    <input value={this.state.input} type = 'text' onChange={this.handleInputName}/>
+                    <input type = "text" required value={this.state.input} onChange={this.handleInputName}/>
                     <button> Add </button>
                 </form>
             </div>
-            );
+            )
+            
+            
         }
 });
 
-module.exports = AddElement;

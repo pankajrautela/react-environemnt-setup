@@ -21,8 +21,13 @@ var libraries = [
     { name: 'Moment', url: 'http://momentjs.com/'},
     { name: 'Express', url: 'http://expressjs.com/'},
     { name: 'Koa', url: 'http://koajs.com/'},
-
 ];
+var backend = [
+    {
+       name: 'mongodb', url: 'https://docs.mongodb.com/manual/'
+    }
+];
+
 module.exports = React.createClass({
     info: function(){
         alert("WIP Bro!!, tool is not ready yet.");
@@ -30,15 +35,15 @@ module.exports = React.createClass({
     getInitialState: function() {
         return { showResults: false };
     },
-ShowPanel:function(e){
+    ShowPanel:function(e){
    this.setState({ showResults:!this.state.showResults });
-},
+    },
      render:function(){
        return(
         <div>
             <div className="logoheader">
-                <LogoHeader pagename = 'mercerinsights' pagetitle='Mercer OS - React Module'/>
-            </div> 
+                <LogoHeader />
+            </div>        
             <input type="button" className="panelButton" value="Show/Hide" onClick={this.ShowPanel} />
                      <div className="content">        
                 <div className="home-box">
@@ -54,11 +59,14 @@ ShowPanel:function(e){
              { this.state.showResults ? 
             <div className = "layer">
                 <div id="content-slide" className = "slide">
-                Mean Technologies - 
+                <h4>Mean Frontend Technologies -</h4> 
                 <DropDown items={ libraries } />
+                <h4>Mean Backend Technologies -</h4>     
+                <DropDown items={ backend} /> 
                 </div>
             </div>
      : null }
+          
             <div className="navbar-fixed-bottom footer-bottom">           
                 <LogoFooter />
             </div>

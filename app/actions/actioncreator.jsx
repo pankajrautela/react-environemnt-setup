@@ -1,34 +1,32 @@
-
 var dispatcher = require('./../dispatcher.js');
-
 
 module.exports ={
     
-    add:function(item){
+    add:function(developer){
         dispatcher.dispatch({
-            payload:item,
+            payload:developer,
             type:"developer-item:add"
         })
     },
     
     
-    delete:function(item){
+    delete:function(developer){
         dispatcher.dispatch({
-            payload:item,
+            payload:developer,
             type:"developer-item:delete"
         })
     },
     
-    inactive:function(item){
+    inactive:function(developer){
         dispatcher.dispatch({
-            payload:item,
+            payload:developer,
             type:"developer-item:inactive"
         })
     },
     
-    active:function(item){
+    active:function(developer){
         dispatcher.dispatch({
-            payload:item,
+            payload:developer,
             type:"developer-item:active"
         })
     }

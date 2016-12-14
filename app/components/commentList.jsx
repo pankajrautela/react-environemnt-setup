@@ -14,8 +14,7 @@ var CommentList = React.createClass({
              <div className="commentList">
                         {commentNodes}
              </div>
-            );
-        
+            );     
     }
 });
 

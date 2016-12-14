@@ -5,35 +5,40 @@ var helper = require("./../helpers/RestHelper.js");
 function DeveloperStore(){
 
     var developerNames = [];  
+    var	changeListeners = [];
+    
+     //on every trigger get new copy of developers
+	function triggerListeners(){
+		changeListeners.forEach(function(listener){
+			listener(developerNames);
+            console.log("New Trigger");
+		})
+	};
+    
+    //get all items first
+    function getDeveloperNames(){
+		return developerNames;
+	};
     
     helper.get("api/developers")
     .then(function(data){
         developerNames = data;
         triggerListeners();
-    })
+        console.log("Get All Data From Store");
+    });
 
-    var	changeListeners = [];
     
-    //get all items first
-    function getDeveloperNames(){
-		return developerNames;
-	}
-
     function onChange(listener){
         changeListeners.push(listener);
-	}
-    
-    //on every trigger get new copy of developers
-	function triggerListeners(){
-		changeListeners.forEach(function(listener){
-			listener(developers);
-		})
-	}
-    
+        console.log("Change Activity Recorded");
+	};
+   
 	function addDeveloperName(developer){
 		developerNames.push(developer);
 		triggerListeners();
-	}
+        helper.post("api/developers",developer);
+        console.log("Post from Store Request Completed");
+	};
     
     function deleteDeveloperName(developer){
         var index;
@@ -43,12 +48,16 @@ function DeveloperStore(){
         })
         developerNames.splice(index,1);
         triggerListeners();
-    }
+       
+        console.log( helper.del('api/developers/'+developer._id));
+    };
     
-    function setDeveloperWorkingStatus(developer, status){
+    function setDeveloperWorkingStatus(developer, working){
         var _developer= developerNames.filter(function(a){return a.name == developer.name})[0];
-        developer.working = status ||false;
+        developer.working = working ||false;
         triggerListeners();
+        helper.patch('api/developers/'+developer._id,developer);
+        console.log("Update from Store Request Completed");
     }
 
 	dispatcher.register(function(event){

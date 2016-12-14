@@ -8,6 +8,7 @@ module.exports = React.createClass({
     getInitialState: function(){
         return { searchString: '' };
     },
+
     handleChange: function(e){
 
         // If you comment out this line, the text box will not change its value.
@@ -34,18 +35,17 @@ module.exports = React.createClass({
         }
 
         return (<div>
-            
-                <div>
                     <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="Type here" />
 
                     <ul> 
 
                         { libraries.map(function(l){
-                            return <li className='list-link'> <a href={l.url} target="_blank">{l.name}</a></li>
+                            return <li>{l.name} <a href={l.url}>{l.url}</a></li>
                         }) }
 
                     </ul>
-                </div></div>);
+            
+                </div>);
     }
 });
 

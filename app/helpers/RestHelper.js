@@ -7,8 +7,8 @@ module.exports = {
 			$.ajax({
 				url:url,
 				dataType:"json",
-				success,
-				error
+				success:success,
+				error:error
 			});
 		});
 	},
@@ -17,19 +17,19 @@ module.exports = {
 			$.ajax({
 				url:url,
 				type:'DELETE',
-				success,
-				error
+				success:success,
+				error:error
 			})
 		})
 	},
 	post(url,data){
 		return new Promise(function(success,error){
 			$.ajax({
-				url,
-				type:'POST',
-				data,
-				success,
-				error
+				url:url,
+				Type:'POST',
+				data:data,
+				success:success,
+				error:error
 			})
 		})
 	},
@@ -38,9 +38,9 @@ module.exports = {
 			$.ajax({
 				url,
 				type:'PATCH',
-				data,
-				success,
-				error
+				data:data,
+				success:success,
+				error:error
 			})
 		})
 	}
