@@ -37,8 +37,7 @@ gulp.task('move2temp',function(){
         gulp.src(['bower_components/skeleton/css/*.css'])
         .pipe(gulp.dest('./temp'));
         gulp.src(['app/images/*'])
-        .pipe(gulp.dest('./temp'));
-    
+        .pipe(gulp.dest('./temp'));    
 });
 
 gulp.task('bundle-n-reload',['bundle'],browserSync.reload)
@@ -46,7 +45,7 @@ gulp.task('bundle-n-reload',['bundle'],browserSync.reload)
 gulp.task('observe-all',function(){
 	gulp.watch('app/**/*.*',['bundle-n-reload']);
 	gulp.watch('app/*.*',['move2temp']);
-    gulp.watch('server/**/*.js',['bundle-n-reload','live-server']);
+    gulp.watch('server/**/*.js',['live-server']);
 });
 
 // combined master task + bundle(i.e. generate app.js) -> server start - >host

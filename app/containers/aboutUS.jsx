@@ -10,12 +10,14 @@ var Resources = require('./../components/developerList.jsx');
 var DeveloperStore = require('./../stores/developerstore.jsx');
 
 var DEVELOPERS = DeveloperStore.getDeveloperNames();
+
 DeveloperStore.onChange(()=>{
 	DEVELOPERS = DeveloperStore.getDeveloperNames();
     rerender();
+    ReactDOM.render(<Resources developers = {DEVELOPERS}/>,app);    
 })
 function rerender(){
-	ReactDOM.render(<Resources developers = {DEVELOPERS}/>,dev);    
+	ReactDOM.render(<Resources developers = {DEVELOPERS}/>,app);    
 }
 
 module.exports = React.createClass({
@@ -34,7 +36,7 @@ module.exports = React.createClass({
                 </div>
                 <div className="layer"> 
                     <div id = "dev">
-                        <Resources developers = {DEVELOPERS}/>
+                      <Resources developers = {DEVELOPERS}/>
                     </div>
                </div>      
                     <div className="row">       

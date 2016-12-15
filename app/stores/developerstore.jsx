@@ -11,7 +11,6 @@ function DeveloperStore(){
 	function triggerListeners(){
 		changeListeners.forEach(function(listener){
 			listener(developerNames);
-            console.log("New Trigger");
 		})
 	};
     
@@ -24,21 +23,17 @@ function DeveloperStore(){
     .then(function(data){
         developerNames = data;
         triggerListeners();
-        console.log("Get All Data From Store");
     });
-
     
     function onChange(listener){
         changeListeners.push(listener);
-        console.log("Change Activity Recorded");
-	};
+	}
    
 	function addDeveloperName(developer){
 		developerNames.push(developer);
 		triggerListeners();
         helper.post("api/developers",developer);
-        console.log("Post from Store Request Completed");
-	};
+	}
     
     function deleteDeveloperName(developer){
         var index;
@@ -48,16 +43,14 @@ function DeveloperStore(){
         })
         developerNames.splice(index,1);
         triggerListeners();
-       
-        console.log( helper.del('api/developers/'+developer._id));
+        helper.del("api/developers/"+developer._id);
     };
     
     function setDeveloperWorkingStatus(developer, working){
         var _developer= developerNames.filter(function(a){return a.name == developer.name})[0];
         developer.working = working ||false;
         triggerListeners();
-        helper.patch('api/developers/'+developer._id,developer);
-        console.log("Update from Store Request Completed");
+        helper.patch("api/developers/"+developer._id,developer);
     }
 
 	dispatcher.register(function(event){

@@ -8,6 +8,6 @@ var developerSchema = {
 };
 
 var developerlist = 
-    mongoose.model('developerlist',developerSchema,'developerlists');
+    mongoose.model('developerlist',developerSchema,"developerlists");
 
 module.exports = developerlist;
