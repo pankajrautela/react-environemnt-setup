@@ -16,15 +16,14 @@ function DeveloperStore(){
     
     //get all items first
     function getDeveloperNames(){
-		return developerNames;
-	};
-    
-    helper.get("api/developers")
-    .then(function(data){
+        helper.get("api/developers")
+        .then(function(data){
         developerNames = data;
         triggerListeners();
-    });
-    
+        });
+        return developerNames;
+	}         
+        
     function onChange(listener){
         changeListeners.push(listener);
 	}

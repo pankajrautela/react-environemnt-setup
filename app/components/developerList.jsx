@@ -13,10 +13,8 @@ module.exports = React.createClass({
                                 return(   
                                        <DeveloperElements developer={developer} key ={"developer"+index} />
                                     )
-                                    })    
-                        }
-                
-               
+                                    })  
+                        }   
             </div>
        )
    } 

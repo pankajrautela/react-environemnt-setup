@@ -11,14 +11,16 @@ var DeveloperStore = require('./../stores/developerstore.jsx');
 
 var DEVELOPERS = DeveloperStore.getDeveloperNames();
 
+function rerender(){
+	ReactDOM.render(<Resources developers = {DEVELOPERS} />,app);    
+}
+
+
 DeveloperStore.onChange(()=>{
 	DEVELOPERS = DeveloperStore.getDeveloperNames();
     rerender();
-    ReactDOM.render(<Resources developers = {DEVELOPERS}/>,app);    
+    ReactDOM.render(<Resources developers = {DEVELOPERS} />,app);    
 })
-function rerender(){
-	ReactDOM.render(<Resources developers = {DEVELOPERS}/>,app);    
-}
 
 module.exports = React.createClass({
     render:function(){
@@ -26,7 +28,7 @@ module.exports = React.createClass({
         <div>
                 <div className="row">
                     <div className="logoheader">
-                        <LogoHeader pagename = 'mercerinsights'/>
+                        <LogoHeader pagename = 'mercerinsights' />
                     </div>
                 </div>
                 <div className="row">
@@ -36,7 +38,7 @@ module.exports = React.createClass({
                 </div>
                 <div className="layer"> 
                     <div id = "dev">
-                      <Resources developers = {DEVELOPERS}/>
+                      <Resources developers = {DEVELOPERS} />
                     </div>
                </div>      
                     <div className="row">       

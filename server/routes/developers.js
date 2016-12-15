@@ -11,15 +11,18 @@ module.exports = function(app){
             .post(function(req,res){
                 //get the payload
                 var newElement = req.body;
-                developerlist.push(newElement);
+            
                 var developerList = new DeveloperModel(newElement);
+                //developerList.push(newElement);    
                 developerList.save(function(err,doc){
-                    res.status(300).send(doc);
-                    //if (err) {
-				    //res.status(501).send();
-			         //} else{
+                    //res.status(300).send(doc);
+                    if (err) {
+				    res.status(501).send();
+			         } else{
                     //res.status(200).send(doc);
-			         //}
+                      return   res.send(req.body);
+                         //console.log("post done");
+			         }
 		          })
 	           });
     
