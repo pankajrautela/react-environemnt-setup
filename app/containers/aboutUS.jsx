@@ -12,14 +12,13 @@ var DeveloperStore = require('./../stores/developerstore.jsx');
 var DEVELOPERS = DeveloperStore.getDeveloperNames();
 
 function rerender(){
-	ReactDOM.render(<Resources developers = {DEVELOPERS} />,app);    
+	ReactDOM.render(<Resources developers = {DEVELOPERS} />,dev);    
 }
-
 
 DeveloperStore.onChange(()=>{
 	DEVELOPERS = DeveloperStore.getDeveloperNames();
     rerender();
-    ReactDOM.render(<Resources developers = {DEVELOPERS} />,app);    
+    ReactDOM.render(<Resources developers = {DEVELOPERS} />,dev);    
 })
 
 module.exports = React.createClass({

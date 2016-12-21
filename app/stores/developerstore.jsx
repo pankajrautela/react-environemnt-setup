@@ -12,14 +12,14 @@ function DeveloperStore(){
 		changeListeners.forEach(function(listener){
 			listener(developerNames);
 		})
-	};
+	}
     
     //get all items first
     function getDeveloperNames(){
         helper.get("api/developers")
         .then(function(data){
-        developerNames = data;
-        triggerListeners();
+            developerNames = data;
+            triggerListeners();
         });
         return developerNames;
 	}         
@@ -30,8 +30,8 @@ function DeveloperStore(){
    
 	function addDeveloperName(developer){
 		developerNames.push(developer);
-		triggerListeners();
-        helper.post("api/developers",developer);
+		helper.post("api/developers",developer);
+        triggerListeners();
 	}
     
     function deleteDeveloperName(developer){
@@ -41,8 +41,8 @@ function DeveloperStore(){
             {index = _index;}
         })
         developerNames.splice(index,1);
-        triggerListeners();
         helper.del("api/developers/"+developer._id);
+        triggerListeners();        
     };
     
     function setDeveloperWorkingStatus(developer, working){
