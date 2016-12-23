@@ -18,7 +18,6 @@ function rerender(){
 DeveloperStore.onChange(()=>{
 	DEVELOPERS = DeveloperStore.getDeveloperNames();
     rerender();
-    ReactDOM.render(<Resources developers = {DEVELOPERS} />,dev);    
 })
 
 module.exports = React.createClass({

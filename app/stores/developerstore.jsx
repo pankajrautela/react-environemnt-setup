@@ -6,7 +6,7 @@ function DeveloperStore(){
 
     var developerNames = [];  
     var	changeListeners = [];
-    
+    var surveLists = [];
      //on every trigger get new copy of developers
 	function triggerListeners(){
 		changeListeners.forEach(function(listener){
@@ -34,6 +34,19 @@ function DeveloperStore(){
         triggerListeners();
 	}
     
+    function addSurvey(survey){
+		surveLists.push(survey);
+		helper.post("api/surveylist",survey);
+        triggerListeners();
+	}
+     function getSurveyList(){
+		   helper.get("api/surveylist")
+        .then(function(data){
+            surveLists = data;
+            triggerListeners();
+        });
+        return surveLists;
+	}         
     function deleteDeveloperName(developer){
         var index;
         developerNames.filter(function(_developer,_index){
@@ -70,10 +83,18 @@ function DeveloperStore(){
 					break;     
 			}
 		}
+        else if(split[0]==='survey'){
+            switch(split[1]) {
+				case "add":
+					addSurvey(event.payload);
+					break;
+            }
+        }
 	})
 
 	return {
 		getDeveloperNames:getDeveloperNames,
+        getSurveyList:getSurveyList,
 		onChange:onChange
 	}
 }
