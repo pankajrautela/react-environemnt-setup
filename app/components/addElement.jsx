@@ -14,8 +14,6 @@ module.exports = React.createClass({
         
      addItem:function(e) {
          e.preventDefault();
-         console.log (this.state.input);
-         console.log (this.state.statusflag);
          Action.add({name:this.state.input,
                     staus:this.state.statusflag});
          this.setState({

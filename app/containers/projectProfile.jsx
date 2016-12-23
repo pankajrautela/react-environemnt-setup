@@ -10,12 +10,7 @@ var NavBar=require('./../components/TopNavigationBar.jsx');
 
 var DeveloperStore = require('./../stores/developerstore.jsx');
 
-var surveyList = DeveloperStore.getSurveyList();
-surveyList.map((item, i) =>{
-console.log(item);
-});
 
-console.log(surveyList);
 module.exports = React.createClass({
    render:function(){
        return(

@@ -12,17 +12,18 @@ var DeveloperStore = require('./../stores/developerstore.jsx');
 var DEVELOPERS = DeveloperStore.getDeveloperNames();
 
 function rerender(){
-	ReactDOM.render(<Resources developers = {DEVELOPERS} />,dev);    
+                ReactDOM.render(<Resources developers = {DEVELOPERS} />,dev);    
 }
 
-DeveloperStore.onChange(()=>{
-	DEVELOPERS = DeveloperStore.getDeveloperNames();
-    rerender();
+DeveloperStore.onChange(function(developers){
+     DEVELOPERS = DeveloperStore.getDeveloperNames();
+     //DEVELOPERS = developers; 
+     rerender();
 })
 
 module.exports = React.createClass({
     render:function(){
-    return(         
+        return(         
         <div>
                 <div className="row">
                     <div className="logoheader">
@@ -34,12 +35,11 @@ module.exports = React.createClass({
                         <NavBar /> 
                     </div>
                 </div>
-                <div className="layer"> 
-                    <div id = "dev">
-                      <Resources developers = {DEVELOPERS} />
-                    </div>
-               </div>      
-                    <div className="row">       
+                <div className="row" id = "dev" onLoad = {this.rerender}> 
+                <Resources developers = {DEVELOPERS} />
+                </div>
+            
+                <div className="row">       
                         <div className="navbar-fixed-bottom footer-bottom">
                             <LogoFooter />
                         </div>
@@ -48,7 +48,3 @@ module.exports = React.createClass({
        )
    } 
 });
-
-       
-    
-
