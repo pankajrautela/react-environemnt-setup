@@ -22,10 +22,7 @@ module.exports = React.createClass({
     render:function(){
         return(
            <div>
-               <div className="logoheader" >   
-                <LogoHeader pagename = 'mercerinsights' pagetitle='Mercer OS - React Module'/>
-               </div>       
-                <div className="container">
+                 <div className="container">
                     <div className="row">
                         <div className="col-sm-6">
                              <SignInBoxHeader />

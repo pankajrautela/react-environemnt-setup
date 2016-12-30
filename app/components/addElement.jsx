@@ -5,8 +5,13 @@ module.exports = React.createClass({
     
     getInitialState:function(){
         return {input:'',
-               statusflag:"inactive"};
-        },
+               statusflag:"inactive",
+               disabled: true};
+    },
+    
+    componentDidMount: function() {
+    this.setState({disabled: false})
+    },
     
     handleInputName:function(e){   
         this.setState({input:e.target.value});
@@ -14,8 +19,6 @@ module.exports = React.createClass({
         
      addItem:function(e) {
          e.preventDefault();
-         console.log (this.state.input);
-         console.log (this.state.statusflag);
          Action.add({name:this.state.input,
                     staus:this.state.statusflag});
          this.setState({
@@ -25,10 +28,10 @@ module.exports = React.createClass({
     
         render:function()
             {
-                return(
+            return(
                 <div className = "developer-addItem">
                     <form onSubmit={this.addItem}>
-                        <input type = "text" required value={this.state.input} onChange={this.handleInputName}/>
+                        <input type = "text" required value={this.state.input} onChange={this.handleInputName} disabled= {this.state.disabled}/>
                         <button> Add </button>
                     </form>
                 </div>

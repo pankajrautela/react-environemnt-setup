@@ -1,4 +1,3 @@
-"use strict";
 var dispatcher = require("./../dispatcher.js");
 var helper = require("./../helpers/RestHelper.js");
 
@@ -6,7 +5,6 @@ function DeveloperStore(){
 
     var developerNames = [];  
     var	changeListeners = [];
-    
      //on every trigger get new copy of developers
 	function triggerListeners(){
 		changeListeners.forEach(function(listener){
@@ -14,13 +12,14 @@ function DeveloperStore(){
 		})
 	}
     
-    //get all items first
-    function getDeveloperNames(){
-        helper.get("api/developers")
+    helper.get("api/developers")
         .then(function(data){
             developerNames = data;
             triggerListeners();
         });
+        
+    //get all items first
+    function getDeveloperNames(){
         return developerNames;
 	}         
         
@@ -33,7 +32,7 @@ function DeveloperStore(){
 		helper.post("api/developers",developer);
         triggerListeners();
 	}
-    
+             
     function deleteDeveloperName(developer){
         var index;
         developerNames.filter(function(_developer,_index){
@@ -48,8 +47,8 @@ function DeveloperStore(){
     function setDeveloperWorkingStatus(developer, working){
         var _developer= developerNames.filter(function(a){return a.name == developer.name})[0];
         developer.working = working ||false;
-        triggerListeners();
         helper.patch("api/developers/"+developer._id,developer);
+        triggerListeners();
     }
 
 	dispatcher.register(function(event){
@@ -69,7 +68,7 @@ function DeveloperStore(){
 					setDeveloperWorkingStatus(event.payload,false);
 					break;     
 			}
-		}
+		}    
 	})
 
 	return {

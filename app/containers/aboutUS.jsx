@@ -1,55 +1,29 @@
 var React = require('react');
-var ReactDOM= require('react-dom');
-
-var SignInBox=require('./../components/SignInBox.jsx');
-var LogoHeader=require('./../components/LogoHeader.jsx');
-var LogoFooter=require('./../components/LogoFooter.jsx');
-var SignInBoxHeader=require('./../components/SignInBoxHeader.jsx');
-var NavBar=require('./../components/TopNavigationBar.jsx');
+var ReactDOM = require('react-dom');
 var Resources = require('./../components/developerList.jsx');
 var DeveloperStore = require('./../stores/developerstore.jsx');
+var AddElement = require('./../components/addElement.jsx');
 
 var DEVELOPERS = DeveloperStore.getDeveloperNames();
-
-function rerender(){
-	ReactDOM.render(<Resources developers = {DEVELOPERS} />,dev);    
-}
-
-DeveloperStore.onChange(()=>{
-	DEVELOPERS = DeveloperStore.getDeveloperNames();
+DeveloperStore.onChange(function(DEVELOPERS){ 
+    console.log("change request received");
     rerender();
-    ReactDOM.render(<Resources developers = {DEVELOPERS} />,dev);    
-})
+    })
+
+function rerender(){    
+    DEVELOPERS=DeveloperStore.getDeveloperNames();
+   // ReactDOM.render(<Resources developers = {DEVELOPERS} />,dev); 
+}
 
 module.exports = React.createClass({
     render:function(){
-    return(         
-        <div>
-                <div className="row">
-                    <div className="logoheader">
-                        <LogoHeader pagename = 'mercerinsights' />
-                    </div>
-                </div>
-                <div className="row">
-                    <div>
-                        <NavBar /> 
-                    </div>
-                </div>
-                <div className="layer"> 
-                    <div id = "dev">
-                      <Resources developers = {DEVELOPERS} />
-                    </div>
-               </div>      
-                    <div className="row">       
-                        <div className="navbar-fixed-bottom footer-bottom">
-                            <LogoFooter />
-                        </div>
-                </div>  
-        </div>
-       )
+        return(
+            <div><h3>List of Developers:</h3>  
+            <AddElement />
+            <div id="dev"  style={{overflow: 'auto', maxHeight: 400}}>            
+              <Resources developers = {DEVELOPERS} />
+            </div>
+            </div>    
+       );
    } 
-});
-
-       
-    
-
+})

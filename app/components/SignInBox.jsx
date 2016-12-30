@@ -33,7 +33,7 @@ var fiftyFifty = Math.random() < 0.5;
           if (name == password){
         this.context.router.push
         ({
-            pathname: '/home/',
+            pathname: '/about/',
             state:
             {
                 name: this.state.name

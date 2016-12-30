@@ -1,8 +1,7 @@
 module.exports = function(app){
     var DeveloperModel = require('./../models/developerlist.js'); 
-    //used only by java
-
-        app.route('/api/developers')
+    
+    app.route('/api/developers')
             .get(function(req,res){
                 DeveloperModel.find(function(error,doc){
                            res.send(doc);
@@ -27,15 +26,15 @@ module.exports = function(app){
 	           });
     
   //another route path
-	app.route('/api/developers/:id')
-	   .get(function(req,res){
-		  DeveloperModel.find({_id:req.params.id},function(error,doc){
-			if (error){
-				return res.status(404).send();
-			}
-			res.status(200).send(doc);
-		      });
-	       })
+	       app.route('/api/developers/:id')
+	           .get(function(req,res){
+		          DeveloperModel.find({_id:req.params.id},function(error,doc){
+			     if (error){
+				    return res.status(404).send();
+			     }
+			     res.status(200).send(doc);
+		          });
+	           })
     
         .delete(function(req,res){
 		  DeveloperModel.findOne({_id:req.params.id},

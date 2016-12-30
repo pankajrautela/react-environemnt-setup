@@ -4,10 +4,8 @@ var LogoHeader=require('./../components/LogoHeader.jsx');
 var LogoFooter=require('./../components/LogoFooter.jsx');
 var SignInBoxHeader=require('./../components/SignInBoxHeader.jsx');
 var NavBar=require('./../components/TopNavigationBar.jsx');
-var Resources = require('./../components/developerList.jsx');
-var DeveloperStore = require('./../stores/developerstore.jsx');
-
-var DEVELOPERS = DeveloperStore.getDeveloperNames();
+//var Resources = require('./../components/developerList.jsx');
+//var DeveloperStore = require('./../stores/developerstore.jsx');
 
 var GUINEAPATHS = [
   'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-guineapig-1.jpg',

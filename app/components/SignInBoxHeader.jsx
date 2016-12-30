@@ -5,7 +5,7 @@ module.exports = React.createClass({
        return(
          <form className="form well signInHeader">
                <div>
-               Sign In To Your Account
+               Login to Analytical Module
                </div>
             </form>
        )

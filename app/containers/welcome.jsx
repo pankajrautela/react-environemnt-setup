@@ -41,11 +41,8 @@ module.exports = React.createClass({
      render:function(){
        return(
         <div>
-            <div className="logoheader">
-                <LogoHeader />
-            </div>        
             <input type="button" className="panelButton" value="Show/Hide" onClick={this.ShowPanel} />
-                     <div className="content">        
+            <div className="content">        
                 <div className="home-box">
                 <Link  to="/login">React Projects</Link>
                 </div>

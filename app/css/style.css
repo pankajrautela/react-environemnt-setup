@@ -1,3 +1,35 @@
+#stars-frame .glyphicon {
+    margin: 0.3em;
+    font-size:1.75em;
+}
+
+#stars-frame, #answer-frame {
+    width: 40%;
+    float:left;
+}
+
+#button-frame {
+    width:20%;
+    float:left;
+    text-align: center;
+    margin-top: 50px
+}
+
+#stars-frame .well, #answer-frame .well{
+    height:250px;
+}
+
+#number-frame .number, #answer-frame .span{
+    display: inline-block;
+    margin:0.5em;
+    background-color:bisque;
+    width: 30px;
+    text-align: center;
+    font-size: 22px;
+    border-radius: 50%;
+    cursor:pointer;
+}
+
 .strikethrough{
     text-decoration : line-through;
     color:darkslategray;
@@ -6,7 +38,18 @@
 	margin-top: 1rem;
 	padding-top: 1rem;
 }
-
+#number-frame .selected-true
+{
+    background-color: aquamarine;
+    color:dodgerblue;
+    cursor: not-allowed;
+}
+#number-frame .used-true
+{
+    background-color:cadetblue;
+    color:chartreuse;
+    cursor: not-allowed;
+}
 
 .copyright {
     color: #fff;
@@ -21,7 +64,11 @@
     width: 100%;
     margin-bottom: 1px
 }
-
+.survey{
+        border-bottom: 1px solid #E1E1E1;
+    border-top: 1px solid #E1E1E1;
+width:603px;
+}
 html {
 	color: darkslategray;
 	background-color: #fffefd;

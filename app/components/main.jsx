@@ -1,9 +1,14 @@
 var React =require('react');
+var MasterPane = require('./../components/masterPane.jsx');
+
 var Main = React.createClass({
     render:function(){
         return(
-                <div className = 'main-container'> 
-                    {this.props.children}        
+                <div>
+                <MasterPane /> 
+                    <div className = 'main-container'> 
+                        {this.props.children}        
+                    </div>
                 </div>            
                 )
             }

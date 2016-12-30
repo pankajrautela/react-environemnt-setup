@@ -8,7 +8,12 @@ module.exports ={
             type:"developer-item:add"
         })
     },
-    
+      addSurvey:function(survey){
+        dispatcher.dispatch({
+            payload:survey,
+            type:"survey:add"
+        })
+    },
     
     delete:function(developer){
         dispatcher.dispatch({

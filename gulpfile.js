@@ -36,6 +36,8 @@ gulp.task('move2temp',function(){
         .pipe(gulp.dest('./temp'));
         gulp.src(['bower_components/skeleton/css/*.css'])
         .pipe(gulp.dest('./temp'));
+        gulp.src(['node_modules/bootstrap/dist/css/*.css'])
+        .pipe(gulp.dest('./temp'));
         gulp.src(['app/images/*'])
         .pipe(gulp.dest('./temp'));    
 });
@@ -49,7 +51,7 @@ gulp.task('observe-all',function(){
 });
 
 // combined master task + bundle(i.e. generate app.js) -> server start - >host
-gulp.task('serve', ['live-server','bundle','move2temp','observe-all'], function (){
+gulp.task('serve', ['live-server','bundle','observe-all'], function (){
     browserSync.init(null, {
         proxy: "http://localhost:7777",
         port: 9001

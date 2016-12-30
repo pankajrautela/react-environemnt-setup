@@ -7,22 +7,27 @@ var hashHistory = ReactRouter.hashHistory;
 var Main = require('./../components/main.jsx');
 var LoginHome = require('./../containers/LoginHomePage.jsx');
 var Home = require('./../containers/HomePage.jsx');
-var guestHome = require('./../containers/guestHome.jsx');
-var Profile = require('./../containers/projectProfile.jsx');
+var GuestHome = require('./../containers/guestHome.jsx');
+var Feedback = require('./../containers/projectFeedback.jsx');
 var Tracker = require('./../containers/projectTracker.jsx');
 var About = require('./../containers/aboutUS.jsx');
-var welcome = require('./../containers/welcome.jsx');
+var Welcome = require('./../containers/welcome.jsx');
+var SurveyData = require('./../containers/surveyResults.jsx');
+var Game = require('./../containers/gameOfLuck.jsx');
 
 var routes = (
     <Router history = {hashHistory}>
         <Route path = '/' component={Main}>
-            <IndexRoute component ={welcome}/>
+            <IndexRoute component ={Welcome} />
             <Route path='login' header ="login" component ={LoginHome} /> 
             <Route path='home' header ="home" component ={Home} /> 
-            <Route path='guest' header ="guesthome" component ={guestHome} /> 
-            <Route path='profile' header ="profile" component ={Profile} /> 
+            <Route path='guest' header ="guesthome" component ={GuestHome} /> 
+            <Route path='feedback' header ="feedback" component ={Feedback} /> 
             <Route path='tracker' header ="tracker" component ={Tracker} /> 
             <Route path='about' header ="about" component ={About} /> 
+            <Route path='surveydata' header ="surveydata" component ={SurveyData} />
+            <Route path='game' header ="game" component ={Game} />
+ 
         </Route>
     </Router>
 );

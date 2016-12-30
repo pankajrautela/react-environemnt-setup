@@ -1,16 +1,17 @@
 var mongoose = require('mongoose');
 //defines  collection name
 var developerlist = require('./models/developerlist.js'); 
+var surveylist = require('./models/surveylist.js'); 
 
 //defines server/db name
 
 mongoose.connect('mongodb://localhost/developer',function(){
     
-    //flush existing data
+     //flush existing data
    //mongoose.connection.db.dropDatabase();
     var developerNames = [
                 {name:"pankaj rautela",status:"inactive",working:true},
-                {name:"prince",status:"inactive",working:false}
+                {name:"indu",status:"inactive",working:false}
                 //{name:"Others",status:"does not exist",working:false}
                 ];  
     //loads new data everytime..
@@ -19,3 +20,4 @@ mongoose.connect('mongodb://localhost/developer',function(){
     })
     console.log("MongoDB Ready");
 })
+

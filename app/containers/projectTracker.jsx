@@ -31,9 +31,6 @@ module.exports = React.createClass({
                     <p> Welcome. You are in Project Tracker page now.</p>
                     
                       <b> Please provide your comment here:</b> 
-                       <AddElement />
-                       
-                                        
                        
                 </div>                      
                 <div className="row">

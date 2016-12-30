@@ -2,6 +2,7 @@
 var express = require('express');
 var React = require('react');
 var developerlist = require('./models/developerlist.js'); 
+var surveylist = require('./models/surveylist.js'); 
 var app = new express();
 var parser = require('body-parser');
 //require('babel/register');
@@ -28,4 +29,5 @@ app.use(parser.json());
 app.use(parser.urlencoded({extended: false}));
 
 require('./routes/developers.js')(app);
+require('./routes/surveys.js')(app);
                    
