@@ -2,7 +2,7 @@ var React = require('react');
 var Action = require('./../actions/actioncreator.jsx');
 
 module.exports = React.createClass({
-    
+                  
     toggleStatus:function(e){
         e.preventDefault();
         if (this.props.developer.working){

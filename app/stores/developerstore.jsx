@@ -5,7 +5,8 @@ function DeveloperStore(){
 
     var developerNames = [];  
     var	changeListeners = [];
-     //on every trigger get new copy of developers
+    var flag = true;
+    //on every trigger get new copy of developers
 	function triggerListeners(){
 		changeListeners.forEach(function(listener){
 			listener(developerNames);
@@ -20,8 +21,14 @@ function DeveloperStore(){
         
     //get all items first
     function getDeveloperNames(){
+        changeRequest();
         return developerNames;
-	}         
+        
+	}
+    
+    function changeRequest(){
+        return flag;
+    }
         
     function onChange(listener){
         changeListeners.push(listener);
@@ -73,7 +80,8 @@ function DeveloperStore(){
 
 	return {
 		getDeveloperNames:getDeveloperNames,
-		onChange:onChange
+		onChange:onChange,
+        changeRequest:changeRequest
 	}
 }
 

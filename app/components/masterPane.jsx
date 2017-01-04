@@ -49,7 +49,13 @@ module.exports = React.createClass({
                                 {this.state.enabledisable?
                                 <Link className="nav-link" to="/game" >Game-Of-Luck</Link>
                                 :null}    
+                            </li>  
+                            <li className="nav-item">
+                                {this.state.enabledisable?
+                                <Link className="nav-link" to="/tictac" >Tic-Tac</Link>
+                                :null}    
                             </li> 
+                      
                   </ul>
                   <ul className="nav navbar-nav navbar-right">
                         <li className="nav-item">

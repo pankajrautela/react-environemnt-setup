@@ -14,6 +14,7 @@ var About = require('./../containers/aboutUS.jsx');
 var Welcome = require('./../containers/welcome.jsx');
 var SurveyData = require('./../containers/surveyResults.jsx');
 var Game = require('./../containers/gameOfLuck.jsx');
+var TicTac = require('./../containers/game.jsx');
 
 var routes = (
     <Router history = {hashHistory}>
@@ -27,6 +28,8 @@ var routes = (
             <Route path='about' header ="about" component ={About} /> 
             <Route path='surveydata' header ="surveydata" component ={SurveyData} />
             <Route path='game' header ="game" component ={Game} />
+            <Route path='tictac' header ="tictac" component ={TicTac} />
+            
  
         </Route>
     </Router>

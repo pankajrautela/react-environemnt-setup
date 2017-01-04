@@ -1,3 +1,28 @@
+.board {
+    display: flex;
+    width: 600px;
+    height: 600px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+
+.square {
+    height:200px;
+    width:200px;
+    box-sizing:border-box;
+    border:5px solid black;
+    font-size: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square:hover{
+    cursor:pointer;
+    background-color: aquamarine;
+}
+
 #stars-frame .glyphicon {
     margin: 0.3em;
     font-size:1.75em;
