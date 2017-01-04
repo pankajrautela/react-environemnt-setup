@@ -13,11 +13,15 @@ module.exports = React.createClass({
             input:'',
             ID:'',
             skill:'',
+            lob:'',
             agree:'',
             comment:''
         }
         },
-    
+    handleLobOnChange:function(e){
+            e.preventDefault(); 
+          this.setState({lob:e.newValue});
+    },
         handleInputName:function(e){  
          e.preventDefault(); 
          this.setState({input:e.target.value});
@@ -53,6 +57,7 @@ module.exports = React.createClass({
                  name:this.state.input,
                  ID:this.state.ID,
                  skill:this.state.skill,
+                 lob:this.state.lob,
                  terms:this.state.agree,
                  comments:this.state.comment
                 })                 
@@ -68,6 +73,8 @@ module.exports = React.createClass({
                 name = {this.state.input}
                 ID ={this.state.ID}
                 skill ={this.state.skill}
+                lob ={'0'}
+                handleLobOnChange={this.handleLobOnChange}
                 terms ={this.state.agree}
                 comments ={this.state.comment}    
                 handleInputName = {this.handleInputName}

@@ -3,6 +3,7 @@ var mongoose = require ('mongoose');
 var surveySchema = {
     name: String,
     ID:Number,
+    lob:String,
     skill: String,
     terms: Boolean,
     comments: String

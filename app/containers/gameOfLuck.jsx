@@ -65,7 +65,7 @@ var ButtonFrame = React.createClass({
         return (
             <div id = "button-frame">
                 {button}
-                <br />
+                <br /><br />
                 <button className ="btn btn-warning btn-xs" onClick={this.props.redraw} disabled = {this.props.redraws === 0}>
                 <span className ="glyphicon glyphicon-refresh"></span>
                 </button>
@@ -102,7 +102,7 @@ var NumbersFrame = React.createClass({
                 usedNumbers = this.props.usedNumbers;
             for(var i=1;i<=9;i++){
                 if(usedNumbers.indexOf(i)>=0){
-                className = "used-true"; 
+                className = "number used-true"; 
                 }
                 else{
                 className = "number selected-"+(selectedNumbers.indexOf(i)>=0);
