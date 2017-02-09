@@ -7,8 +7,7 @@ module.exports = React.createClass({
            <div className ="row">
                <div> 
                     <div>
-                        <h4>{this.props.survey.name}</h4>
-                        <h4 className = {this.props.survey.terms ?"" :"strikethrough"}>{this.props.survey.name}</h4>    
+                        <h4>{this.props.survey.name}</h4>  
                     </div>
                 </div>
            </div>

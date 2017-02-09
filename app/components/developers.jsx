@@ -16,7 +16,8 @@ module.exports = React.createClass({
     
     delete:function(e){
         e.preventDefault();
-        const result = window.confirm(`Do you want to delete the ${this.props.developer.name}?`)
+        var val = this.props.developer.name;
+        const result = window.confirm('Do you want to delete the '+val+'?')
     if (result) {
       Action.delete(this.props.developer);
     }    

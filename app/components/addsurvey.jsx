@@ -13,7 +13,7 @@ module.exports = React.createClass({
             input:'',
             ID:'',
             skill:'',
-            lob:'',
+            lob:0,
             agree:'',
             comment:''
         }
@@ -61,10 +61,10 @@ module.exports = React.createClass({
                  terms:this.state.agree,
                  comments:this.state.comment
                 })                 
-         this.context.router.push
-        ({
-            pathname: '/surveydata'
-        })
+        //  this.context.router.push
+        // ({
+        //     pathname: '/surveydata'
+        // })
         },
     
         render:function(){
@@ -73,7 +73,7 @@ module.exports = React.createClass({
                 name = {this.state.input}
                 ID ={this.state.ID}
                 skill ={this.state.skill}
-                lob ={'0'}
+                lob ={0}
                 handleLobOnChange={this.handleLobOnChange}
                 terms ={this.state.agree}
                 comments ={this.state.comment}    

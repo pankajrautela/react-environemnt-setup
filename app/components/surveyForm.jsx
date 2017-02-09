@@ -4,19 +4,19 @@ var PropTypes = React.PropTypes;
 var lobData =   [
         {
             description: 'IT Talent',
-            serial: '0'
+            serial: 0
         },
         {
             description: 'UK Team',
-            serial: '1'
+            serial: 1
         },
         {
             description: 'Health',
-            serial: '2'
+            serial: 2
         },
         {
             description: 'retirement',
-            serial: '3'
+            serial: 3
         }
     ];
 module.exports = React.createClass({
@@ -40,7 +40,7 @@ module.exports = React.createClass({
     render:function()
             {
             return(  
-            <div className = "survey">           
+            <div className = "survey-left">           
               <form onSubmit={this.props.handleSubmit}>
                 <table>
                     <tbody>                        
@@ -70,10 +70,10 @@ module.exports = React.createClass({
                                 </label> 
                             </td>
                         </tr>
-                           <tr>
+                       <tr>
                            <td>Your Lob: </td>
                            <td>
-                           <Dropdown id='lobDropdown' options={this.lobdata} value={this.props.lob} labelField='description' valueField='serial' onChange={this.props.handleLobOnChange}/>
+                           <Dropdown id='lobDropdown' options={lobData} value={this.props.lob} labelField='description' valueField='serial' onChange={this.props.handleLobOnChange}/>
                            </td>
                            </tr>
                         <tr>

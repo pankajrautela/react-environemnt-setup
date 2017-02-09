@@ -18,9 +18,7 @@ function rerendersurvey(){
 module.exports = React.createClass({
     render:function(){
         return(
-            <div id="sur">
               <SurveyList  surveys={SurveyData} />
-            </div>
        )
    } 
 })

@@ -41,10 +41,10 @@ module.exports = React.createClass({
      render:function(){
        return(
         <div>
-            <input type="button" className="panelButton" value="Show/Hide" onClick={this.ShowPanel} />
+            {/*<input type="button" className="panelButton" value="Show/Hide" onClick={this.ShowPanel} />*/}
             <div className="content">        
                 <div className="home-box">
-                <Link  to="/login">React Projects</Link>
+                <Link  to="/">React Projects</Link>
                 </div>
                 <div className="home-box">
                 <Link to="/">Survey Tool</Link>

@@ -44,7 +44,6 @@ function surveyStore(){
        	})
 
 	return {
-		//getDeveloperNames:getDeveloperNames,
         getSurveyList:getSurveyList,
 		onChange:onChange
 	}

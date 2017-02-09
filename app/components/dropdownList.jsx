@@ -1,5 +1,5 @@
 var React = require('react');
-var Dropdown = React.createClass({
+module.exports =  React.createClass({
 
     propTypes: {
         id: React.PropTypes.string.isRequired,

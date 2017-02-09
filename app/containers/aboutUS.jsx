@@ -12,7 +12,7 @@ DeveloperStore.onChange(function(DEVELOPERS){
 
 function rerender(){    
     DEVELOPERS=DeveloperStore.getDeveloperNames();
-   // ReactDOM.render(<Resources developers = {DEVELOPERS} />,dev); 
+    ReactDOM.render(<Resources developers = {DEVELOPERS} />,dev); 
 }
 
 module.exports = React.createClass({

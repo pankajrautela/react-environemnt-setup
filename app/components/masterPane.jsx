@@ -45,7 +45,7 @@ module.exports = React.createClass({
                                 <Link className="nav-link" to="/about" >Manage-Team</Link>
                                 :null}    
                             </li> 
-                            <li className="nav-item">
+                            {/*<li className="nav-item">
                                 {this.state.enabledisable?
                                 <Link className="nav-link" to="/game" >Game-Of-Luck</Link>
                                 :null}    
@@ -54,7 +54,7 @@ module.exports = React.createClass({
                                 {this.state.enabledisable?
                                 <Link className="nav-link" to="/tictac" >Tic-Tac</Link>
                                 :null}    
-                            </li> 
+                            </li> */}
                       
                   </ul>
                   <ul className="nav navbar-nav navbar-right">
